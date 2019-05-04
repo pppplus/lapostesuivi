@@ -198,7 +198,7 @@ class AdminOrdersLaPosteSuiviController extends ModuleAdminController
     /**
      * @see ControllerCore::setMedia()
      */
-    public function setMedia()
+    public function setMedia($isNewTheme = false)
     {
         parent::setMedia();
 
