@@ -28,8 +28,9 @@ if (!is_array($selected_statuses) || !count($selected_statuses)) {
     die('Tracking Cancelled : Module configuration is not complete, statuses need to be set.');
 }
 
+$arr = LaPosteSuiviWebService::callMultiple()->getResponse();
 try {
-    foreach (LaPosteSuiviWebService::callMultiple()->getResponse() as $id_order => $response) {
+    foreach ($arr as $id_order => $response) {
         if (!is_array($response) || !count($response)) {
             echo '<span style="color: orange;">';
             echo '> No orders to track...';
